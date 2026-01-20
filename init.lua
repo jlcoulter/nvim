@@ -167,7 +167,6 @@ require("lazy").setup({
 }, 
 {
   "mfussenegger/nvim-lint",
-  event = "LazyFile",
   opts = {
     -- Event to trigger linters
     events = { "BufWritePost", "BufReadPost", "InsertLeave" },
