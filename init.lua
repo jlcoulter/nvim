@@ -23,8 +23,8 @@ vim.g.maplocalleader = "\\"
 
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
@@ -284,7 +284,7 @@ require("lazy").setup({
     formatters_by_ft = {
       lua = { "stylua" },
       python = { "isort", "black" },
-      javascript = { "prettierd", "prettier" },
+      json = { "prettierd", "prettier" },
       -- You can add more filetypes and their preferred formatters here
     },
     -- Set default options for all formatters
