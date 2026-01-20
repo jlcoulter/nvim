@@ -141,7 +141,6 @@ require("lazy").setup({
               python = true,
               query = true,
               xml = true,
-              ...
             })[ev.match]
           then
             vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
