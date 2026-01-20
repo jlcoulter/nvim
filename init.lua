@@ -62,20 +62,11 @@ require("lazy").setup({
     }, 
     {
       "nvim-treesitter/nvim-treesitter",
-  build = ":TSUpdate", -- Command to run after installation/update
-  opts = {
-    ensure_installed = { "c", "lua", "vim", "vimdoc", "query" }, -- Languages to auto-install
-    auto_install = true, -- Automatically installs missing parsers
-    highlight = {
-      enable = true, -- Enables syntax highlighting
-    },
-    indent = {
-      enable = true, -- Enables indentation
-    },
-  },
-  config = function(_, opts)
-    -- This function runs after the plugin is loaded
-    require("nvim-treesitter.configs").setup(opts)
-  end,
+      build = ":TSUpdate",
+      opts = {
+        ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "python"},
+        auto_install = true,
+        highlight = { enable = true },
+        indent = { enable = true },
     }
 })
