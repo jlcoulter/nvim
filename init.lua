@@ -59,6 +59,17 @@ require("lazy").setup({
         vim.keymap.set("n", "<leader>fb", builtin.buffers)
       end,
      },
+     {
+      "nvim-treesitter/nvim-treesitter",
+      build = ":TSUpdate",
+      config = function()
+        require("nvim-treesitter.configs").setup({
+          ensure_installed = { "lua", "python", "bash", "json", "yaml" },
+          highlight = { enable = true },
+          indent = { enable = true },
+        })
+      end,
+      },
 
   },
   -- Configure any other settings here. See the documentation for more details.
