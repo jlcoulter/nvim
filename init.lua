@@ -59,5 +59,5 @@ require("lazy").setup({
         vim.keymap.set("n", "<leader>fb", builtin.buffers)
       end,
      },
-     
+    }
 })
