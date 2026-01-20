@@ -98,7 +98,6 @@ require("lazy").setup({
       "todotxt",
       "vhdl",
       "xml",
-      ...
     })
 
     require("nvim-treesitter-textobjects").setup({
