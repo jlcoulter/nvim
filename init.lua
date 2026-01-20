@@ -59,9 +59,8 @@ require("lazy").setup({
         vim.keymap.set("n", "<leader>fb", builtin.buffers)
       end,
      },
-    }, 
     {
-      "nvim-treesitter/nvim-treesitter.nvim",
+      "nvim-treesitter/nvim-treesitter",
       build = ":TSUpdate",
       opts = {
         ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "python"},
