@@ -68,9 +68,15 @@ require("lazy").setup({
         highlight = { enable = true },
         indent = { enable = true },
     },
-        {
-        "windwp/nvim-autopairs"
-    },
+    
+          {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    config = true
+    -- use opts = {} for passing setup options
+    -- this is equivalent to setup({}) function
+},
+
   }
 }
 })
