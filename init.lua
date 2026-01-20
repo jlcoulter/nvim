@@ -100,7 +100,7 @@ require("lazy").setup({
     dependencies = { "mason.nvim" },
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "pyright", "bashls", "json-lsp", "java-language-server" },
+        ensure_installed = { "lua_ls", "pyright", "bashls", "jsonls", "java-language-server" },
       })
     end,
   },
