@@ -66,7 +66,7 @@ require("lazy").setup({
       "nvim-treesitter/nvim-treesitter",
       build = ":TSUpdate",
       opts = {
-        ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "python", "java", "ruby", "json" },
+        ensure_installed = { "lua", "vim", "python", "json" },
         auto_install = true,
         highlight = { enable = true },
         indent = { enable = true },
@@ -101,7 +101,7 @@ require("lazy").setup({
     dependencies = { "mason.nvim" },
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "pyright", "bashls", "jsonls", "ruby_lsp" },
+        ensure_installed = { "lua_ls", "pyright", "bashls", "jsonls" },
       })
     end,
   },
