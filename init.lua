@@ -262,23 +262,49 @@ require("lazy").setup({
     })
   end,
 },
-
 {
   "stevearc/conform.nvim",
-  dependencies = { "mason.nvim" },
-  lazy = true,
-  cmd = "ConformInfo",
+  -- Event to lazy-load the plugin. "BufWritePre" formats on save.
+  event = { "BufWritePre" },
+  -- A command to check active formatters (optional, but useful for debugging)
+  cmd = { "ConformInfo" },
+  -- Optional keymap to manually format the buffer
   keys = {
     {
-      "<leader>cF",
+      "<leader>f",
       function()
-        require("conform").format({ formatters = { "injected" }, timeout_ms = 3000 })
+        require("conform").format({ async = true, lsp_format = "fallback" })
       end,
-      mode = { "n", "x" },
-      desc = "Format Injected Langs",
+      mode = "", -- Applies to normal and visual modes
+      desc = "Format buffer",
     },
   },
-},
+  opts = {
+    -- Define your formatters by file type
+    formatters_by_ft = {
+      lua = { "stylua" },
+      python = { "isort", "black" },
+      javascript = { "prettierd", "prettier" },
+      -- You can add more filetypes and their preferred formatters here
+    },
+    -- Set default options for all formatters
+    default_format_opts = {
+      lsp_format = "fallback",
+      async = false,
+      timeout_ms = 500,
+    },
+    -- Format on save
+    format_on_save = function(bufnr)
+      -- Disable auto-format for specific filetypes if needed
+      if vim.b[bufnr].conform_disable then
+        return
+      end
+      return { timeout_ms = 500 }
+    end,
+  },
+}
+
+
   }
 }
 })
