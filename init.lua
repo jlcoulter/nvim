@@ -43,6 +43,11 @@ vim.lsp.enable("pyright")
 vim.lsp.enable("bashls")
 vim.lsp.enable("jsonls")
 
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+})
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
