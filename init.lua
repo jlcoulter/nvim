@@ -37,6 +37,8 @@ vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
 vim.opt.clipboard = "unnamedplus"
 
+vim.lsp.enable("lua_ls")
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
@@ -103,7 +105,7 @@ require("lazy").setup({
     -- C-k: Toggle signature help (if signature.enabled = true)
     --
     -- See :h blink-cmp-config-keymap for defining your own keymap
-    keymap = { preset = 'default' },
+    keymap = { preset = 'super-tab' },
 
     appearance = {
       -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
